@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://ChrisKar96.github.io/el/projects/airhockey/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ChrisKar96.github.io/projects/airhockey/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://ChrisKar96.github.io/el/projects/airhockey/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ChrisKar96.github.io/el/projects/androidhologram/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ChrisKar96.github.io/projects/androidhologram/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://ChrisKar96.github.io/el/projects/androidhologram/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ChrisKar96.github.io/el/projects/cargame/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ChrisKar96.github.io/projects/cargame/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://ChrisKar96.github.io/el/projects/cargame/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ChrisKar96.github.io/el/projects/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ChrisKar96.github.io/projects/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://ChrisKar96.github.io/el/projects/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ChrisKar96.github.io/el/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ChrisKar96.github.io/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://ChrisKar96.github.io/el/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ChrisKar96.github.io/el/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ChrisKar96.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://ChrisKar96.github.io/el/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://ChrisKar96.github.io/el/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ChrisKar96.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://ChrisKar96.github.io/el/"
+                />
+  </url>
+  
+</urlset>
