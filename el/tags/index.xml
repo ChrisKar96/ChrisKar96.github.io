@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Χρήστος Καραμολέγκος</title>
-    <link>https://christoskaramo.tk/el/tags/</link>
+    <link>https://www.christoskaramo.tk/el/tags/</link>
     <description>Recent content in Tags on Χρήστος Καραμολέγκος</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>el</language>
     
-	<atom:link href="https://christoskaramo.tk/el/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.christoskaramo.tk/el/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
