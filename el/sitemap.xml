@@ -59,21 +59,6 @@
   </url>
   
   <url>
-    <loc>https://www.christoskaramo.tk/el/categories/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.christoskaramo.tk/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="el"
-                href="https://www.christoskaramo.tk/el/categories/"
-                />
-  </url>
-  
-  <url>
     <loc>https://www.christoskaramo.tk/el/tags/</loc>
     <priority>0</priority>
     <xhtml:link
