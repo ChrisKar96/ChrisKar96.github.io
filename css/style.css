@@ -1,9 +1,9 @@
-@media only screen and (max-width:41em) { 
-	.tableres{
-		display: block;
-		overflow: auto;
-	}
+@media only screen and (max-width: 41em) {
+  table {
+    display: block;
+  }
 }
+
 
 #gform input, textarea{
 	width: 40%;
