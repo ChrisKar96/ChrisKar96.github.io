@@ -31,6 +31,20 @@
   </url>
   
   <url>
+    <loc>https://www.christoskaramo.tk/projects/tictactoe-offline/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://www.christoskaramo.tk/el/projects/tictactoe-offline/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.christoskaramo.tk/projects/tictactoe-offline/"
+                />
+  </url>
+  
+  <url>
     <loc>https://www.christoskaramo.tk/projects/cargame/</loc>
     <xhtml:link
                 rel="alternate"
