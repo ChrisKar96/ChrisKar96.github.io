@@ -60,6 +60,16 @@
   
   <url>
     <loc>https://www.christoskaramo.tk/cookiepolicy/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://www.christoskaramo.tk/el/cookiepolicy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.christoskaramo.tk/cookiepolicy/"
+                />
   </url>
   
   <url>
