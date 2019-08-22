@@ -4,7 +4,6 @@
   }
 }
 
-
 #gform input, textarea{
 	width: 40%;
 	padding: 12px 20px;
@@ -43,6 +42,10 @@
 
 #gform input[type=submit]:hover {
   background-color: #45a049;
+}
+
+.markdown p {
+	text-align: justify;
 }
 
 /* COOKIE CONSENT */
