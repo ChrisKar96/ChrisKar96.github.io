@@ -1,4 +1,0 @@
-User-Agent: *
-Disallow: 
-Disallow: /cdn-cgi/
-Sitemap: https://www.christoskaramo.tk/sitemap.xml
