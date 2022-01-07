@@ -25,20 +25,15 @@
 }
 .timeline>li .timeline-panel:before {
  right:auto;
- left:-15px;
  border-right-width:15px;
  border-left-width:0
 }
 .timeline>li .timeline-panel:after {
  right:auto;
- left:-14px;
  border-right-width:14px;
  border-left-width:0
 }
 .timeline>li .timeline-image {
- z-index:100;
- position:absolute;
- left:0;
  width:80px;
  height:80px;
  margin-left:0;
@@ -59,18 +54,16 @@
 }
 .timeline>li.timeline-inverted>.timeline-panel {
  float:right;
- padding:0 20px 0 100px;
+ padding:0 20px 0 20px;
  text-align:left
 }
 .timeline>li.timeline-inverted>.timeline-panel:before {
  right:auto;
- left:-15px;
  border-right-width:15px;
  border-left-width:0
 }
 .timeline>li.timeline-inverted>.timeline-panel:after {
  right:auto;
- left:-14px;
  border-right-width:14px;
  border-left-width:0
 }
@@ -98,7 +91,7 @@
  }
  .timeline>li .timeline-panel {
   float:left;
-  width:43%;
+  width:75%;
   padding:0 20px 20px 30px;
   text-align:right
  }
