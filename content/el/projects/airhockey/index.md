@@ -1,6 +1,6 @@
 ---
 title: "Air Hockey Robot"
-weight: 10
+weight: 40
 date: 2019-05-29T11:58:00+03:00
 tags: ["arduino"]
 img: airhockey.jpg

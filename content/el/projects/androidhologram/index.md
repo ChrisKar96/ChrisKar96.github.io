@@ -1,6 +1,6 @@
 ---
 title: "Android 3D Hologram Assistant"
-weight: 40 
+weight: 45 
 date: 2019-05-29T11:31:52+03:00
 tags: ["android", "java", "animation"]
 img: androidhologram.jpg
