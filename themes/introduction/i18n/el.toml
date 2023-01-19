@@ -1,0 +1,33 @@
+[404_title]
+    other = "404 - Αυτή η σελίδα δεν υπάρχει!"
+[404_description]
+    other = "Ωχ! Αυτή η σελίδα δεν υπάρχει!{{ with .Site.Params.email }} Αν πιστεύεις ότι κάτι έπρεπε να βρίσκεται εδώ [παρακαλώ ενημέρωσέ με](mailto:{{ . }}). {{ end }}"
+[index_projects_allProjects]
+    other = "Όλα τα Project"
+[index_blog_latestPosts]
+    other = "Τελευταία Ανάρτηση"
+[index_blog_allPosts]
+    other = "Όλες οι Αναρτήσεις"
+[index_blog_readMore]
+    other = "Διάβασε περισσότερα"
+[index_currentTime]
+    other = "Η τρέχουσα τοπική μου ώρα είναι"
+[index_mailPrompt]
+    other = "Για να επικοινωνήσετε μαζί μου, στείλτε ένα μήνυμα στο"
+[nav_backToSection]
+    other = "Πίσω στο {{ .Title }}"
+[nav_main]
+    other = "Αρχική"
+[blog_readingTime]
+    one = "{{ .Count }} λεπτό διαβάσματος"
+    other = "{{ .Count }} λεπτά διαβάσματος"
+[blog_shareThis]
+    other = "Κοινοποίηση"
+[footer_text]
+    other = "Φτιάχτηκε με <i class=\"fa fa-heart\"></i>&nbsp;και <i class=\"fa fa-coffee\"></i>&nbsp;από [εμένα]({{ .Site.BaseURL }}) χρησιμοποιώντας το [**Introduction**](https://github.com/victoriadotdev/hugo-theme-introduction/) theme για το [Hugo](https://gohugo.io/)."
+[project_more]
+	other = "Περισσότερα"
+[rss_title]
+	other = "Πρόσφατο περιεχόμενο"
+[rss_title_from]
+	other = "από"

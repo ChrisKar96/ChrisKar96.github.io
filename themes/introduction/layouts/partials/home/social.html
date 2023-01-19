@@ -1,0 +1,7 @@
+<div class="social-icons">
+    {{ range .Site.Params.social }}
+    <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
+        <i class="{{ .icon_pack}} fa-{{ .icon}}" style="margin-left: 0.2em; margin-right: 0.2em"></i>
+    </a>
+    {{ end }}
+</div>

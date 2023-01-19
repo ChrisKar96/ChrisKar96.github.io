@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+    <head>
+		{{ $redir := resources.Get "/js/redir.js" | minify }}
+        <script src="{{ $redir.Permalink }}"  crossorigin=anonymous></script>
+        <!--{{ partial "head/loader.html" . }}-->
+        {{ partial "head/css.html" . }}
+        {{ partial "head/metadata.html" . }}
+        {{ partial "head/openGraph.html" . }}
+        {{ partial "head/favicons.html" . }}
+        {{ partial "css/owlCarousel.html" . }}
+    </head>
+
+    <body>
+		<!-- Preloader Icon -->
+		<!--<div id="loader" style="display:none"></div>-->
+		<div id="maincont">
+			{{ with .Site.GetPage "/home" }}
+			<section id="top" class="hero is-{{ .Site.Params.home.introHeight | default "fullheight" }}">
+				<!-- Hero head section to play nice with Bulma -->
+				<div class="hero-head"></div>
+
+				<!-- Super sweet Hero body title -->
+				<div class="hero-body">
+					<div class="container has-text-centered">
+						<!-- Title and tagline -->
+						<h1 class="bold-title {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in one{{ end }}">
+							{{ .Title }}
+						</h1>
+						<div class="subtitle is-3 {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in two{{ end }}">
+							{{ .Content }}
+						</div>
+						<!-- End title and tagline -->
+						<!-- Some social icons -->
+						<div class="{{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in three{{ end }}">
+							{{ partial "home/social.html" . }}
+						</div>
+						<!-- End top social icons -->
+					</div>
+				</div> <!-- End of Hero body -->
+				{{ end }}
+
+				<div class="hero-foot {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in three{{ end }}">
+					<!-- Tell them all about it! -->
+					{{ partial "nav.html" . }}
+				</div>
+			</section> <!-- Done with Hero -->
+
+			{{ with .Site.GetPage "/home" }}
+			{{ $home := . }}
+			{{ $pages := .Resources.ByType "page" }}
+
+			{{ with .Site.GetPage "/blog" }} 
+				{{ $pages = $pages | append . }}
+			{{ end }}
+
+			{{ with .Site.GetPage "/projects" }} 
+				{{ $pages = $pages | append . }}
+			{{ end }}
+
+			{{ range sort $pages "Params.weight" }}
+			<!-- Range through all sections in /home execept contact.md -->
+			{{ if ne .Name "contact.md" }}
+			{{ if .File }}
+			{{ if eq (os.Stat .File.Dir).Name "projects" }}
+				<!-- Now for some cool projects -->
+				{{ partial "home/projects.html" . }}
+			{{ else if eq (os.Stat .File.Dir).Name "blog" }}
+				<!-- Let`s show some blog posts -->
+				{{ partial "home/blog.html" . }}
+			{{ else }}
+
+			<!-- Experience and Certifications should not have markdown classes in divs" -->
+			{{ if and (ne .Name "experience.md") (ne .Name "certifications.md") }}
+			<div class="section" id="{{ .File.TranslationBaseName }}">
+				<div class="container">
+					<h2 class="title is-2 has-text-centered">{{ .Title }}</h2>
+					{{ if .Params.Image }}
+					<div class="columns">
+						<div class="column is-one-third has-text-centered">
+							{{ with $home.Resources.GetMatch .Params.Image }}
+							{{ with .Resize "320x" }}
+							<noscript>
+								<img class="img-responsive avatar" src="{{ .Permalink }}" alt="{{ .Name }}">
+							</noscript>
+							<img 
+								class="img-responsive avatar lazy" 
+								data-src="{{ .Permalink }}"/>
+							{{ end }}
+							{{ end }}
+						</div>
+						<div class="markdown column">
+							{{ .Content }}
+						</div>
+					</div>
+					{{ else }}
+					<div class="markdown has-text-centered">
+						{{ .Content }}
+					</div>
+					{{ end }}
+				</div>
+				<!-- End About container-->
+				{{ partial "top-icon.html" . }}
+			</div>
+			<div class="container">
+				<hr>
+			</div>
+			{{ else }}
+			<div class="section" id="{{ .File.TranslationBaseName }}">
+				<div class="container">
+					<h2 class="title is-2 has-text-centered">{{ .Title }}</h2>
+					<div class="has-text-centered">
+						{{ .Content }}
+					</div>
+				</div>
+				<!-- End About container-->
+				{{ partial "top-icon.html" . }}
+			</div>
+			<div class="container">
+				<hr>
+			</div>
+			{{ end }}
+			{{ end }}
+			{{ end }}
+			{{ end }}
+			{{ end }}
+			<!-- Let`s chat, shall we? -->
+			{{ with .Resources.GetMatch "contact.md" }}
+			<div class="section" id="{{ .File.TranslationBaseName }}">
+				<div class="container has-text-centered">
+					<h2 class="title is-2">{{ .Title }}</h2>
+					{{ if .Site.Params.home.localTime }}
+					<p>{{ i18n "index_currentTime" . }} <span id="time"></span>.</p>
+					{{ end }}
+					<div class="markdown">
+						{{ i18n "index_mailPrompt" . }}:
+					</div>
+					{{ with .Site.Params.email }}
+					
+					<h5 class="subtitle is-4 has-text-centered top-pad">
+						<a href="mailto:{{ . }}">{{ . }}</a>
+					</h5>
+					{{ end }}
+					{{ partial "home/social.html" . }}
+				</div>
+				<!-- End Contact container -->
+				{{ partial "top-icon.html" . }}
+			</div>
+			<div class="container">
+				<hr>
+			</div>
+			{{ end }}
+			<!-- End Contact section -->
+			{{ end }}
+
+			{{ partial "footer/text.html" . }}
+		</div>
+        <!-- End of fade in three section -->
+        {{ partial "footer/scripts.html" . }}
+		{{ $index := resources.Get "/js/index.js" | minify }}
+        <script src="{{ $index.Permalink }}"></script>
+        {{ partial "js/owlCarousel.html" . }}
+
+        {{ if .Site.Params.home.localTime }}
+        {{ $momentjs := resources.Get "/vendor/momentjs/moment.min.js" }}
+        {{ $momentTimezoneWithData := resources.Get "/vendor/momentjs/moment-timezone-with-data-2014-2024.min.js" }}
+        {{ $initMomentjs := resources.Get "/js/initMoment.js" | resources.ExecuteAsTemplate "js/initMoment.tmp.js" . }}
+		{{ $momentLocalEl := resources.Get "/vendor/momentjs/moment-local-el.js" }}
+		{{ $bundleMoment := slice $momentjs $momentTimezoneWithData $initMomentjs | resources.Concat "/js/bundleMoment.js" }}
+        <script src="{{ $bundleMoment.Permalink }}"></script>
+        {{ end }}
+    </body>
+	
+</html>

@@ -1,0 +1,64 @@
+{{ define "main" }}
+    <div class="container markdown top-pad">
+        {{ with .Resources.ByType "image" }}
+        <div class="has-text-centered">
+            {{ $moreThanOneImage := gt (len .) 1 }}
+            {{ if $moreThanOneImage }}
+            <div class="owl-carousel owl-theme">
+            {{ end }}
+                {{ range sort . "Params.weight" }}
+                    {{ $image := .Resize "1000x" }}
+                    {{ if $moreThanOneImage }}
+                    <div class="item owl-height">
+                    {{ end }}
+                        <img src="{{ $image.RelPermalink }}" class="img-responsive" alt="{{ $image.Name }}">
+                    {{ if $moreThanOneImage }}
+                    </div>
+                    {{ end }}
+                {{ end }}
+            {{ if $moreThanOneImage }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+		{{ if .Params.desc1}}
+		<p style="text-align:center">
+		{{ .Params.desc1 }}
+		</p>
+		{{ end }}
+		{{ if .Params.desc2}}
+		<p style="text-align:center">
+		{{ .Params.desc2 }}
+		</p>
+		{{ end }}
+		{{ .Content }}
+		{{ if .Params.links}}
+		<p style="text-align:center">
+		{{ i18n "project_more" }}: 
+		{{ if .Params.github }}
+		<a href={{ .Params.github }} ><i class="fab fa-github"></i></a>&nbsp;
+		{{ end }}
+		{{ if .Params.youtube }}
+		<a href={{ .Params.youtube }} ><i class="fab fa-youtube"></i></a>&nbsp;
+		{{ end }}
+		{{ if .Params.webpage }}
+		<a href={{ .Params.webpage }} ><i class="fas fa-external-link-alt"></i></a>&nbsp;
+		{{ end }}
+		{{ if .Params.file }}
+		<a href={{ .Params.file }} download><i class="fas fa-file-alt"></i></a>
+		{{ end }}
+		</p>
+		{{ end }}
+		{{ partial "tags.html" .}}
+		{{ partial "comments.html" . }}
+    </div>
+    <!-- End post content -->
+{{ end }}
+
+{{ define "customCSS" }}
+{{ partial "css/owlCarousel.html" . }}
+{{ end }}
+
+{{ define "customScripts" }}
+{{ partial "js/owlCarousel.html" . }}
+{{ end }}

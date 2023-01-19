@@ -1,0 +1,28 @@
+<!-- Loader CSS -->
+<style>
+	#loader {
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+		background: url(/img/Spinner.svg) center no-repeat #fff;
+	}
+	@-webkit-keyframes fadeout {
+		0% {opacity:1;}
+		100% {opacity:0;}
+	}
+	@keyframes fadeout {
+		0% {opacity:1;}
+		100% {opacity:0;}
+	}
+	.fadeOut {
+	  opacity:0;
+	  -moz-animation   : fadeout 1s linear;
+	  -webkit-animation: fadeout 1s linear;
+	  animation        : fadeout 1s linear;
+	}
+</style>
+{{ $loader := resources.Get "/js/loader.js" | minify }}
+<script src="{{ $loader.Permalink }}"></script>

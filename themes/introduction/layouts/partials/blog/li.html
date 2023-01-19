@@ -1,0 +1,5 @@
+{{ range .Pages.ByPublishDate.Reverse }}
+    <li class="post-item">
+        <span><a href="{{ .Permalink }}">{{ .Title }}</a></span>{{ if .Params.date }} - <span>{{ dateFormat .Site.Params.dateFormat .Date.Local }}</span>{{ end }}
+    </li>
+{{ end }}

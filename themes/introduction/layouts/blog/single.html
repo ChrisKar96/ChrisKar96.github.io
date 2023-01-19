@@ -1,0 +1,42 @@
+{{ define "title" }}
+{{ with .Site.GetPage "/blog" }}
+    <h1 class="bold-title is-1">{{ .Title }}</h1>
+{{ end }}
+{{ end }}
+
+{{ define "main" }}
+    <div class="container">
+        <h2 class="title is-1 top-pad strong-post-title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+        <div class="post-data">
+            {{ if .Params.date }}{{ dateFormat .Site.Params.dateFormat .Date.Local }} |{{ end }}
+            {{ i18n "blog_readingTime" .ReadingTime }}
+        </div>
+        {{ if .Site.Params.share }}
+        <div class="blog-share">
+            {{ i18n "blog_shareThis" . }}:
+            {{ partial "share-buttons.html" . }}
+        </div>
+        {{ end }}
+        {{ if .Params.tags }}
+        {{ $len := (len .Params.tags) }}
+        <p>
+            Tag{{ if gt $len 1 }}s{{ end }}:
+            {{ range $index, $tag := .Params.tags }}
+            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ if ne (add $index 1) $len }},{{ end }}
+            {{ end }}
+        </p>
+        {{ end }}
+    </div>
+    <!-- Begin blog post content -->
+    <div class="container markdown top-pad">
+		<div style="margin-bottom:5em">
+			{{ .Content }}
+		</div>
+		<div>
+			{{ partial "comments.html" . }}
+		</div>
+	</div>
+    <!-- End blog post content -->
+{{ end }}

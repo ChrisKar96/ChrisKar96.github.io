@@ -1,0 +1,10 @@
+{{ $themeStyle := .Site.Params.themeStyle | default "light" }}
+$fa-font-path: '{{ "fonts/fontawesome-free/webfonts" | absURL }}'
+
+@import "fonts"
+@import "{{ $themeStyle }}-variables"
+@import "base-variables"
+@import "bulma-import"
+@import "fontawesome-import"
+@import "base"
+@import "{{ $themeStyle }}-style"

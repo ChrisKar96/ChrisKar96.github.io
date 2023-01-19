@@ -1,0 +1,18 @@
+{{ define "title" }}
+	<script>
+	if(window.location.pathname.search("el") == 1 && window.location.pathname != "/el/404.html"){
+		location.replace("{{ .Site.BaseURL 	}}el/404.html")
+	}
+	</script>
+    <h1 class="bold-title is-1">{{ i18n "404_title" . }}</h1>
+{{ end }}
+
+{{ define "main" }}
+    <div class="container markdown top-pad">
+        {{ i18n "404_description" . | markdownify }}
+    </div>
+{{ end }}
+
+{{ define "footer" }}
+    {{ partial "footer/text.html" . }}
+{{ end }}

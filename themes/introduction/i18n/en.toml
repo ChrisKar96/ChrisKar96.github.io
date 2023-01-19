@@ -1,0 +1,33 @@
+[404_title]
+    other = "404 - This page doesn't exist!"
+[404_description]
+    other = "Oops! This page doesn't exist!{{ with .Site.Params.email }} If you believe something should have been here [please tell me](mailto:{{ . }}). {{ end }}"
+[index_projects_allProjects]
+    other = "All Projects"
+[index_blog_latestPosts]
+    other = "Latest Post"
+[index_blog_allPosts]
+    other = "All Posts"
+[index_blog_readMore]
+    other = "Read more"
+[index_currentTime]
+    other = "My current local time is"
+[index_mailPrompt]
+    other = "If you want to get in touch, send an email to"
+[nav_backToSection]
+    other = "Back to {{ .Title }}"
+[nav_main]
+    other = "main"
+[blog_readingTime]
+    one = "{{ .Count }} minute read"
+    other = "{{ .Count }} minutes read"
+[blog_shareThis]
+    other = "Share this"
+[footer_text]
+    other = "Made with <i class=\"fa fa-heart\"></i>&nbsp;and <i class=\"fa fa-coffee\"></i>&nbsp;by [me]({{ .Site.BaseURL }}) using the [**Introduction**](https://github.com/victoriadotdev/hugo-theme-introduction/) theme for [Hugo](https://gohugo.io/)."
+[project_more]
+	other = "More"
+[rss_title]
+	other = "Recent content"
+[rss_title_from]
+	other = "from"

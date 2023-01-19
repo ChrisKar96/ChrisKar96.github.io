@@ -1,0 +1,10 @@
+{{ $jQuery := resources.Get "/vendor/jquery/jquery-3.4.1.min.js" }}
+{{ $lazyLoad := resources.Get "/js/lazyLoad.js" | minify }}
+{{ $scripts := slice $jQuery $lazyLoad | resources.Concat "/js/bundle.js" }}
+<script src="{{ $scripts.Permalink }}"></script>
+
+{{ $googleAnalytics := resources.Get "/js/googleAnalytics.js" | minify }}
+{{ $cookieconsent := resources.Get "/js/cookieconsent.js" | minify }}
+{{ $analyticsBundle := slice $googleAnalytics $cookieconsent | resources.Concat "/js/analyticsBundle.js" }}
+<script src="{{ $analyticsBundle.Permalink }}"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>

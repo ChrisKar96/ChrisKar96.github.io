@@ -1,0 +1,3 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:ChrisKar96/ChrisKar96.github.io.git

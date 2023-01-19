@@ -1,0 +1,6 @@
+{
+    "ignoredFiles": [
+        "**/themes/**",
+    ],
+    "minKBReduced": 100,
+}
