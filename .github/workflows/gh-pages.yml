@@ -36,6 +36,9 @@ jobs:
           # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#caching-packages-data
           cache-dependency-path: '**/package-lock.json'
 
+      - name: Add npm packages
+        run: npm install tailwindcss@latest postcss@latest postcss-cli@latest autoprefixer@latest
+
       - name: Build
         run: hugo --gc --minify
 
