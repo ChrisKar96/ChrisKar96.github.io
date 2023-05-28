@@ -1,4 +1,4 @@
-{{ $jQuery := resources.Get "/vendor/jquery/jquery-3.4.1.min.js" }}
+{{ $jQuery := resources.Get "/vendor/jquery/jquery-3.7.0.min.js" }}
 {{ $lazyLoad := resources.Get "/js/lazyLoad.js" | minify }}
 {{ $scripts := slice $jQuery $lazyLoad | resources.Concat "/js/bundle.js" }}
 <script src="{{ $scripts.Permalink }}"></script>
