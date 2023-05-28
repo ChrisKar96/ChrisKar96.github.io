@@ -17,7 +17,7 @@ Below you will find a list with my recent work experience.
 	  </div>
 	  <div class="timeline-body"> 
 		<h5>DevOps Engineer</h5> 
-		<h5>May 2022 - Present</h5> 
+		<h5>May 2022 - March 2023</h5> 
         <ul> 
 			<li>Responsible for the organization's infrastructure and introducing tools and processes that respect DevOps best practices.</li> 
 		</ul> 
@@ -33,7 +33,7 @@ Below you will find a list with my recent work experience.
       </div>
       <div class="timeline-body"> 
         <h5>Systems Administrator</h5> 
-        <h5>July 2019 – Present</h5>
+        <h5>July 2019 – March 2023</h5>
         <ul>
 			<li>Responsible for the upkeep, configuration, and reliable operation of the organization's infrastructure.</li>
 			<li>Duties include database, network, security, web and server administration.</li>
