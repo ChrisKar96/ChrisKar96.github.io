@@ -11,7 +11,7 @@ weight: "10"
       </tr>
       <tr>
          <td>Διαχείριση Συστημάτων</td>
-         <td>Unix, NGINX, PKI, SSH, Email, OpenVPN, VMware/Virtualbox, Ansible</td>
+         <td>Apache2/nginx, PKI, SSH, Email, OpenVPN, VMware/Virtualbox, Ansible</td>
       </tr>
       <tr>
          <td>DevOps</td>
@@ -19,7 +19,7 @@ weight: "10"
       </tr>
       <tr>
          <td>Προγραμματισμός</td>
-         <td>C, C++, Java, Python, Bash Scripting, LATEX</td>
+         <td>Bash Scripting, Python, LATEX</td>
       </tr>
       <tr>
          <td>Προγρ. Διαδικτύου</td>
@@ -27,7 +27,7 @@ weight: "10"
       </tr>
       <tr>
          <td>Λειτουργικά Συστήματα</td>
-         <td>Windows, Linux, Android</td>
+         <td>Linux, Windowstd>
       </tr>
       <tr>
          <td>Διάφορα</td>
