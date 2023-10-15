@@ -13,7 +13,7 @@ Below you will find a list with my recent work experience.
 	<a href="http://army.gr" target="_blank"><img class="timeline-image lazy" src="/img/hellenicarmy.png" alt="HELLENIC ARMY LOGO"></a> 
 	<div class="timeline-panel markdown"> 
 	  <div class="timeline-heading"> 
-		<h4><a href="http://army.gr" style="color:#630" target="_blank">Hellenic Army</a></h4> 
+		<h4><a href="http://army.gr" style="color:#454B1B" target="_blank">Hellenic Army</a></h4> 
 	  </div>
 	  <div class="timeline-body"> 
 		<h5>Mandatory Military Service</h5> 
