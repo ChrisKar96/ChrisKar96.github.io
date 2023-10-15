@@ -1,6 +1,6 @@
 ---
 title: Certifications
-weight: "30"
+weight: "19"
 
 ---
 Below you will find a list of my certifications.
