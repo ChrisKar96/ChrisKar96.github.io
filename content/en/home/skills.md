@@ -11,7 +11,7 @@ weight: "10"
       </tr>
       <tr>
          <td>Systems Administration</td>
-         <td>Apache2/nginx, PKI, SSH, Email, OpenVPN, VMware/Virtualbox, Ansible</td>
+         <td>Apache2/nginx, PKI, SSH, Email, OpenVPN, VMware/Virtualbox, Ansible, High Availability</td>
       </tr>
       <tr>
          <td>DevOps</td>
