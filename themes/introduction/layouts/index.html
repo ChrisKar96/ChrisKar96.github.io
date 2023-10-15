@@ -71,8 +71,8 @@
 				{{ partial "home/blog.html" . }}
 			{{ else }}
 
-			<!-- Experience and Certifications should not have markdown classes in divs" -->
-			{{ if and (ne .Name "experience.md") (ne .Name "certifications.md") }}
+			<!-- Experience, Certifications and Education should not have markdown classes in divs" -->
+			{{ if and (ne .Name "experience.md") (ne .Name "certifications.md") (ne .Name "education.md") }}
 			<div class="section" id="{{ .File.TranslationBaseName }}">
 				<div class="container">
 					<h2 class="title is-2 has-text-centered">{{ .Title }}</h2>
