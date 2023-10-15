@@ -10,6 +10,23 @@ Below you will find a list with my recent work experience.
 <ul class="timeline">
 
   <li class="timeline-inverted"> 
+	<a href="http://army.gr" target="_blank"><img class="timeline-image lazy" src="/img/hellenicarmy.png" alt="HELLENIC ARMY LOGO"></a> 
+	<div class="timeline-panel markdown"> 
+	  <div class="timeline-heading"> 
+		<h4><a href="http://army.gr" style="color:#630" target="_blank">Hellenic Army</a></h4> 
+	  </div>
+	  <div class="timeline-body"> 
+		<h5>Mandatory Military Service</h5> 
+		<h5>March 2023 - December 2023</h5> 
+        <ul> 
+			<li>Development and upkeep of a cryptographically secure communications platform.</li>
+			<li>User training and support in operating the platform.</li>
+		</ul> 
+	  </div> 
+	</div> 
+  </li> 
+
+  <li class="timeline-inverted"> 
 	<a href="http://www.hilonsys.com" target="_blank"><img class="timeline-image lazy" src="/img/hilonsys.png" alt="HILONSYS LOGO"></a> 
 	<div class="timeline-panel markdown"> 
 	  <div class="timeline-heading"> 
