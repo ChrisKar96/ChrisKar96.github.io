@@ -3,10 +3,6 @@ title: "Christos Karamolegkos"
 headless: true
 ---
 
-ICTE Student
-
-<br>
-
 _DevOps Engineer and Systems Administrator_
 
 <br>

@@ -11,7 +11,7 @@ weight: "10"
       </tr>
       <tr>
          <td>Διαχείριση Συστημάτων</td>
-         <td>Apache2/nginx, PKI, SSH, Email, OpenVPN, VMware/Virtualbox, Ansible</td>
+         <td>Apache2/nginx, PKI, SSH, Email, OpenVPN, VMware/Virtualbox, Ansible, High Availability</td>
       </tr>
       <tr>
          <td>DevOps</td>
@@ -27,7 +27,7 @@ weight: "10"
       </tr>
       <tr>
          <td>Λειτουργικά Συστήματα</td>
-         <td>Linux, Windowstd>
+         <td>Linux, Windows</td>
       </tr>
       <tr>
          <td>Διάφορα</td>

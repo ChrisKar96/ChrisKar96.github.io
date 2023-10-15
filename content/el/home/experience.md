@@ -10,6 +10,23 @@ weight: "13"
 <ul class="timeline">
 
   <li class="timeline-inverted"> 
+	<a href="http://army.gr" target="_blank"><img class="timeline-image lazy" src="/img/hellenicarmy.png" alt="HELLENIC ARMY LOGO"></a> 
+	<div class="timeline-panel markdown"> 
+	  <div class="timeline-heading"> 
+		<h4><a href="http:// army.gr" style="color:#630" target="_blank">Ελληνικός Στρατός</a></h4> 
+	  </div>
+	  <div class="timeline-body"> 
+		<h5>Υποχρεωτική Στρατιωτική Θητεία</h5> 
+		<h5>Μάρτιος 2023 - Δεκέμβριος 2023</h5> 
+        <ul> 
+			<li>Ανάπτυξη και συντήρηση κρυπτασφαλισμένης πλατφόρμας επικοινωνίας.</li>
+			<li>Εκπαίδευση και υποστήριξη των χρηστών στη χρήση της πλατφόρμας.</li>
+		</ul> 
+	  </div> 
+	</div> 
+  </li>
+  
+  <li class="timeline-inverted"> 
 	<a href="http://www.hilonsys.com" target="_blank"><img class="timeline-image lazy" src="/img/hilonsys.png" alt="HILONSYS LOGO"></a> 
 	<div class="timeline-panel markdown"> 
 	  <div class="timeline-heading"> 
