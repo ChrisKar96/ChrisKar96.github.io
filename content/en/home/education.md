@@ -1,6 +1,6 @@
 ---
 title: Education
-weight: "20"
+weight: "17"
 
 ---
 
