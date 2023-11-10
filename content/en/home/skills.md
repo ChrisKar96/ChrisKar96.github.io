@@ -6,32 +6,32 @@ weight: "10"
 <table class="tableres">
    <tbody>
       <tr>
-         <td>Diagnose / Repair</td>
-         <td>Software and hardware problem identifying and solving.</td>
-      </tr>
-      <tr>
          <td>Systems Administration</td>
-         <td>Apache2/nginx, PKI, SSH, Email, OpenVPN, VMware/Virtualbox, Ansible, High Availability</td>
+         <td>Apache2, Nginx, PKI, SSH, Email, LDAP, OpenVPN, Virtualization, High Availability</td>
       </tr>
       <tr>
          <td>DevOps</td>
-         <td>Git, Github, GitLab, TravisCI, Docker</td>
+         <td>Ansible, Git, Github, Github Actions, GitLab, TravisCI, Docker, Podman, Kubernetes</td>
+      </tr>
+      <tr>
+         <td>Monitoring</td>
+         <td>Zabbix, Icinga 2, Nagios, Prometheus, Grafana, Monit, Munin, NetData, Uptime Kuma</td>
       </tr>
       <tr>
          <td>Programming</td>
-         <td>Bash Scripting, Python, LATEX</td>
+         <td>Bash Scripting, Python, Jinja2, YAML, TOML, Go, LATEX</td>
       </tr>
       <tr>
          <td>Web development</td>
-         <td>HTML/CSS, Bootstrap, Javascript, JQuery, Ajax, PHP, SQL, Wordpress</td>
+         <td>HTML/CSS, Bootstrap, Javascript, JQuery, Ajax, PHP, SQL, WordPress, Redis</td>
       </tr>
       <tr>
-         <td>Operational Systems</td>
-         <td>Linux, Windows </td>
+         <td>Operating Systems</td>
+         <td>Linux (Debian, Ubuntu, CentOS), Windows</td>
       </tr>
       <tr>
          <td>Miscellaneous</td>
-         <td>Office Suites, Algorithmic Design, Project Management, Driving License (B)</td>
+         <td>Troubleshooting, Office Suites, Driving License (B)</td>
       </tr>
       <tr>
          <td>Languages</td>
