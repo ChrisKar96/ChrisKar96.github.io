@@ -9,42 +9,42 @@ weight: "13"
 
 <ul class="timeline">
 
-  <li class="timeline-inverted"> 
-	<a href="http://army.gr" target="_blank"><img class="timeline-image lazy" src="/img/hellenicarmy.png" alt="HELLENIC ARMY LOGO"></a> 
-	<div class="timeline-panel markdown"> 
-	  <div class="timeline-heading"> 
-		<h4><a href="http:// army.gr" style="color:#454B1B" target="_blank">Ελληνικός Στρατός</a></h4> 
+  <li class="timeline-inverted">
+	<a href="http://army.gr" target="_blank"><img class="timeline-image lazy" src="/img/hellenicarmy.png" alt="HELLENIC ARMY LOGO"></a>
+	<div class="timeline-panel markdown">
+	  <div class="timeline-heading">
+		<h4><a href="http://army.gr" style="color:#454B1B" target="_blank">Ελληνικός Στρατός</a></h4>
 	  </div>
-	  <div class="timeline-body"> 
-		<h5>Υποχρεωτική Στρατιωτική Θητεία</h5> 
-		<h5>Μάρτιος 2023 - Δεκέμβριος 2023</h5> 
-        <ul> 
+	  <div class="timeline-body">
+		<h5>Υποχρεωτική Στρατιωτική Θητεία</h5>
+		<h5>Μάρτιος 2023 - Δεκέμβριος 2023</h5>
+        <ul>
 			<li>Ανάπτυξη και συντήρηση κρυπτασφαλισμένης πλατφόρμας τηλεπικοινωνίας.</li>
 			<li>Εκπαίδευση και υποστήριξη των χρηστών στη χρήση της πλατφόρμας.</li>
 			<li><em>Σχετικές Δεξιότητες</em>: <strong>Linux</strong>, <strong>VPN</strong>, <strong>SIP</strong>, <strong>Monitoring</strong>, <strong>High Availability</strong>, <strong>Python / Django</strong>, <strong>Docker</strong>, <strong>Android</strong></li>
-		</ul> 
-	  </div> 
-	</div> 
-  </li>
-  
-  <li class="timeline-inverted"> 
-	<a href="http://www.hilonsys.com" target="_blank"><img class="timeline-image lazy" src="/img/hilonsys.png" alt="HILONSYS LOGO"></a> 
-	<div class="timeline-panel markdown"> 
-	  <div class="timeline-heading"> 
-		<h4><a href="http://www.hilonsys.com" style="color:#630" target="_blank">Χίλων Πληροφορική</a></h4> 
+		</ul>
 	  </div>
-	  <div class="timeline-body"> 
-		<h5>DevOps Engineer</h5> 
-		<h5>Μάιος 2022 - Μάρτιος 2023</h5> 
-        <ul> 
+	</div>
+  </li>
+
+  <li class="timeline-inverted">
+	<a href="https://web.archive.org/web/20220522083934/http://www.hilonsys.com/" target="_blank"><img class="timeline-image lazy" src="/img/hilonsys.png" alt="HILONSYS LOGO"></a>
+	<div class="timeline-panel markdown">
+	  <div class="timeline-heading">
+		<h4><a href="https://web.archive.org/web/20220522083934/http://www.hilonsys.com/" style="color:#630" target="_blank">Χίλων Πληροφορική</a></h4>
+	  </div>
+	  <div class="timeline-body">
+		<h5>DevOps Engineer</h5>
+		<h5>Μάιος 2022 - Μάρτιος 2023</h5>
+        <ul>
 			<li>Υπεύθυνος για την υποδομή του οργανισμού και την επιλογή εργαλείων και διαδικασιών που σέβονται τις καλύτερες DevOps πρακτικές.</li>
 			<li>Ανασχεδίασα την υποδομή, υλοποιώντας προσβάσιμες μόνο μέσω VPN, dockerized υπηρεσίες όπως OpenVPN server, NTP, εσωτερικός/εξωτερικός DNS server, GitLab, Ansible Controller, MTA (Postfix) και άλλες.</li>
 			<li>Δημιούργησα self-managed Kubernetes cluster μέσω Ansible με χρήση του <a href="https://kubespray.io/"><em>kubespray</em></a></li>
 			<li><em>Σχετικές Δεξιότητες</em>: <strong>Linux</strong>, <strong>Ansible</strong>, <strong>VPN</strong>, <strong>Bash</strong>, <strong>PKI</strong>, <strong>LDAP</strong>, <strong>Docker</strong>, <strong>Kubernetes</strong></li>
-		</ul> 
-	  </div> 
-	</div> 
-  </li> 
+		</ul>
+	  </div>
+	</div>
+  </li>
 
   <li class="timeline-inverted">
 	<a href="https://eellak.gr" target="_blank"><img class="timeline-image lazy" src="/img/eellak.png" alt="EELLAK LOGO"></a>
