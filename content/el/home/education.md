@@ -14,7 +14,7 @@ weight: "17"
       </div>
       <div class="timeline-body">
         <h5>Οκτώβριος 2014 - Οκτώβριος 2023</h5>
-        <p>Αποφοίτησα με Integrated Master's δίπλωμα (MΕng) ως Μηχανικός Πληροφορικής και Τηλεπικοινωνιών, με τελική βαθμολογία 7.32.</p>
+        <p>Αποφοίτησα με Integrated Master's δίπλωμα (MΕng) ως Μηχανικός Πληροφορικής και Τηλεπικοινωνιών, με τελική βαθμολογία 7.39.</p>
         <p>Για τη <a href="https://github.com/ChrisKar96/Thesis"><em>διπλωματική εργασία</em></a> μου 'Σχεδίαση και Υλοποίηση Πληροφοριακού Συστήματος Ανοιχτού Κώδικα για Διαχείριση Εκκίνησης Υπολογιστών μέσω Δικτύου', ανέπτυξα μια διαδικτυακή εφαρμογή βασισμένη σε PHP και MariaDB με την ονομασία <a href="https://github.com/ChrisKar96/iBoot-Thesis"><em>iBoot</em></a> χρησιμοποιώντας το <a href="https://codeigniter.com/"><em>CodeIgniter 4</em></a> MVC PHP framework, τη JavaScript βιβλιοθήκη <a href="https://tabulator.info/"><em>Tabulator</em></a> και το <a href="https://swagger.io/specification/"><em>OpenAPI Specification</em></a>.</p>
       </div>
     </div>

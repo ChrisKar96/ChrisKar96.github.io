@@ -10,6 +10,26 @@ weight: "13"
 <ul class="timeline">
 
   <li class="timeline-inverted">
+	<a href="https://powerfactors.com" target="_blank"><img class="timeline-image lazy" src="/img/powerfactors.png" alt="POWER FACTORS LOGO"></a>
+	<div class="timeline-panel markdown">
+	  <div class="timeline-heading">
+		<h4><a href="https://powerfactors.com" style="color:#063DC8" target="_blank">Power Factors</a></h4>
+	  </div>
+	  <div class="timeline-body">
+		<h5>Senior ITSM Engineer</h5>
+		<h5>Ιανουάριος 2024 - Τώρα</h5>
+        <ul>
+			<li>Αυτοματοποίησα και πραγματοποίησα εγκατάσταση και συντήρηση σε ένα στόλο περισσότερων από 7500 διακομιστών και συσκευών σε όλο τον κόσμο.</li>
+			<li>Συντήρησα εκατοντάδες ζωντανές υπηρεσίες παρακολουθώντας δείκτες επιδόσεων όπως διαθεσιμότητα, ρυθμό μετάδοσης και καθυστέρηση.</li>
+			<li>Ανέπτυξα τα συστήματα υποστηρίζοντας αλλαγές που ενισχύουν την αξιοπιστία, την απόδοση και τη δυνατότητα εξυπηρέτησης.</li>
+			<li>Συνεργάστηκα με την ομάδα ανάπτυξης για την τελειοποίηση των διαδικασιών CI/CD και την υλοποίηση δεκάδων υπηρεσιών, συμπεριλαμβανομένων πακέτων και containers, τόσο στο cloud όσο και σε on-premises Kubernetes.</li>
+			<li><em>Relevant Skills</em>: <strong>Linux</strong>, <strong>Bash</strong>, <strong>VPN</strong>, <strong>Monitoring</strong>, <strong>Kafka</strong>, <strong>Kafka</strong>, <strong>MQTT</strong></li>, <strong>Cassandra</strong></li>, <strong>Docker</strong>, <strong>Kubernetes</strong></li>
+		</ul>
+	  </div>
+	</div>
+  </li>
+
+  <li class="timeline-inverted">
 	<a href="http://army.gr" target="_blank"><img class="timeline-image lazy" src="/img/hellenicarmy.png" alt="HELLENIC ARMY LOGO"></a>
 	<div class="timeline-panel markdown">
 	  <div class="timeline-heading">

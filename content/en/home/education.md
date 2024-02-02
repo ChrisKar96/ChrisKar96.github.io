@@ -14,7 +14,7 @@ weight: "17"
       </div>
       <div class="timeline-body">
         <h5>October 2014 - October 2023</h5>
-        <p>Graduated with an Integrated Master’s degree (MEng) in Computer and Telecommunications Engineering with a final grade of 7.32.</p>
+        <p>Graduated with an Integrated Master’s degree (MEng) in Computer and Telecommunications Engineering with a final grade of 7.39.</p>
         <p>For my <a href="https://github.com/ChrisKar96/Thesis"><em>thesis</em></a> 'Design and implementation of an open-source platform for managing computer booting over a network', I developed a PHP and MariaDB based web application called <a href="https://github.com/ChrisKar96/iBoot-Thesis"><em>iBoot</em></a> using the <a href="https://codeigniter.com/"><em>CodeIgniter 4</em></a> MVC PHP framework, the <a href="https://tabulator.info/"><em>Tabulator</em></a> JavaScript library and the <a href="https://swagger.io/specification/"><em>OpenAPI Specification</em></a>.</p>
       </div>
     </div>
