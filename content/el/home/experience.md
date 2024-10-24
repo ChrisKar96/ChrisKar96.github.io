@@ -23,7 +23,7 @@ weight: "13"
 			<li>Συντήρησα εκατοντάδες ζωντανές υπηρεσίες παρακολουθώντας δείκτες επιδόσεων όπως διαθεσιμότητα, ρυθμό μετάδοσης και καθυστέρηση.</li>
 			<li>Ανέπτυξα τα συστήματα υποστηρίζοντας αλλαγές που ενισχύουν την αξιοπιστία, την απόδοση και τη δυνατότητα εξυπηρέτησης.</li>
 			<li>Συνεργάστηκα με την ομάδα ανάπτυξης για την τελειοποίηση των διαδικασιών CI/CD και την υλοποίηση δεκάδων υπηρεσιών, συμπεριλαμβανομένων πακέτων και containers, τόσο στο cloud όσο και σε on-premises Kubernetes.</li>
-			<li><em>Relevant Skills</em>: <strong>Linux</strong>, <strong>Bash</strong>, <strong>VPN</strong>, <strong>Monitoring</strong>, <strong>Kafka</strong>, <strong>Kafka</strong>, <strong>MQTT</strong></li>, <strong>Cassandra</strong></li>, <strong>Docker</strong>, <strong>Kubernetes</strong></li>
+			<li><em>Relevant Skills</em>: <strong>Linux</strong>, <strong>Bash</strong>,<strong>Ansible</strong>,  <strong>VPN</strong>, <strong>Monitoring</strong>, <strong>Kafka</strong>, <strong>MQTT</strong></li>, <strong>Cassandra</strong></li>, <strong>Docker</strong>, <strong>Kubernetes</strong></li>
 		</ul>
 	  </div>
 	</div>
