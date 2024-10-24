@@ -23,7 +23,7 @@ Below you will find a list with my recent work experience.
 			<li>Maintained hundreds of live services by monitoring performance indicators such as availability, throughput and latency.</li>
 			<li>Grew systems by advocating for changes that enhance reliability, performance and serviceability.</li>
 			<li>Collaborated with the development team to refine CI/CD processes and implement dozens of services, including native packages and containers, on both cloud and on-premises Kubernetes.</li>
-			<li><em>Relevant Skills</em>: <strong>Linux</strong>, <strong>Bash</strong>, <strong>VPN</strong>, <strong>Monitoring</strong>, <strong>Kafka</strong>, <strong>Kafka</strong>, <strong>MQTT</strong></li>, <strong>Cassandra</strong></li>, <strong>Docker</strong>, <strong>Kubernetes</strong></li>
+			<li><em>Relevant Skills</em>: <strong>Linux</strong>, <strong>Bash</strong>, <strong>Ansible</strong>, <strong>VPN</strong>, <strong>Monitoring</strong>, <strong>Kafka</strong>, <strong>MQTT</strong></li>, <strong>Cassandra</strong></li>, <strong>Docker</strong>, <strong>Kubernetes</strong></li>
 		</ul>
 	  </div>
 	</div>
