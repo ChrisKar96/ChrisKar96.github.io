@@ -13,7 +13,7 @@ weight: "17"
         <h4><a href="https://www.bma.upatras.gr/index.php/en/" target="_blank">Department of Business Administration</a>, <a href="https://www.upatras.gr/en/" target="_blank">University of Patras</a></h4>
       </div>
       <div class="timeline-body">
-        <h5>December 2025 -- September 2026</h5>
+        <h5>December 2025 - September 2026</h5>
         <p>Basic concepts and methodologies for Business Administration.</p>
       </div>
     </div>

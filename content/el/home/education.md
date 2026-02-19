@@ -13,7 +13,7 @@ weight: "17"
         <h4><a href="https://www.bma.upatras.gr/el/" target="_blank">Τμήμα Διοίκησης Επιχειρήσεων</a>, <a href="https://www.upatras.gr/" target="_blank">Πανεπιστήμιο Πατρών</a>
       </div>
       <div class="timeline-body">
-        <h5>Δεκέμβριος 2025 -- Σεπτέμβριος 2026</h5>
+        <h5>Δεκέμβριος 2025 - Σεπτέμβριος 2026</h5>
         <p>Βασικά στοιχεία και μεθοδολογίες Διοίκησης Επιχειρήσεων.</p>
       </div>
     </div>
