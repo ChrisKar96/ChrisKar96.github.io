@@ -10,6 +10,45 @@ Below you will find a list of my certifications.
 <ul class="timeline">
 
   <li class="timeline-inverted">
+    <a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank"><img class="timeline-image lazy" src="/img/ckad.png" alt="CKAD BADGE"></a>
+    <div class="timeline-panel markdown">
+      <div class="timeline-heading">
+        <h4><a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank">Certified Kubernetes Application Developer (CKAD)</a></h4>
+      </div>
+      <div class="timeline-body">
+        <h5>December 2025</h5>
+        <p>Earners of this designation demonstrated the skills, knowledge and competencies to perform the responsibilities of a Kubernetes Application Developer.</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="timeline-inverted">
+    <a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank"><img class="timeline-image lazy" src="/img/kcsa.png" alt="KCSA BADGE"></a>
+    <div class="timeline-panel markdown">
+      <div class="timeline-heading">
+        <h4><a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank">Kubernetes and Cloud Native Security Associate (KCSA)</a></h4>
+      </div>
+      <div class="timeline-body">
+        <h5>August 2025</h5>
+        <p>Earners of this badge have demonstrated an understanding of the baseline security configuration of Kubernetes clusters to meet compliance objectives, including the ability to harden security controls, test and monitor the security, and participate in assessing security threats and vulnerabilities.</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="timeline-inverted">
+    <a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank"><img class="timeline-image lazy" src="/img/kcna.png" alt="KCNA BADGE"></a>
+    <div class="timeline-panel markdown">
+      <div class="timeline-heading">
+        <h4><a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank">Kubernetes and Cloud Native Associate (KCNA)</a></h4>
+      </div>
+      <div class="timeline-body">
+        <h5>July 2025</h5>
+        <p>Earners of this designation demonstrated a basic knowledge of Kubernetes and cloud-native technologies, including how to deploy an application using basic kubectl commands, the architecture of Kubernetes (containers, pods, nodes, clusters), understanding the cloud-native landscape and projects (storage, networking, GitOps, service mesh), and understanding the principles of cloud-native security.</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="timeline-inverted">
     <a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank"><img class="timeline-image lazy" src="/img/LFCE.png" alt="Linux Foundation Certified Engineer BADGE"></a>
     <div class="timeline-panel markdown">
       <div class="timeline-heading">

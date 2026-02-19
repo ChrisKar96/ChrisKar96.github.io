@@ -10,6 +10,45 @@ weight: "19"
 <ul class="timeline">
 
   <li class="timeline-inverted">
+    <a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank"><img class="timeline-image lazy" src="/img/ckad.png" alt="CKAD BADGE"></a>
+    <div class="timeline-panel markdown">
+      <div class="timeline-heading">
+        <h4><a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank">Certified Kubernetes Application Developer (CKAD)</a></h4>
+      </div>
+      <div class="timeline-body">
+        <h5>Δεκέμβριος 2025</h5>
+        <p>Οι κάτοχοι αυτού του τίτλου επέδειξαν τις δεξιότητες, τις γνώσεις και τις ικανότητες που απαιτούνται για την εκτέλεση των καθηκόντων ενός Προγραμματιστή Εφαρμογών Kubernetes.</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="timeline-inverted">
+    <a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank"><img class="timeline-image lazy" src="/img/kcsa.png" alt="KCSA BADGE"></a>
+    <div class="timeline-panel markdown">
+      <div class="timeline-heading">
+        <h4><a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank">Kubernetes and Cloud Native Security Associate (KCSA)</a></h4>
+      </div>
+      <div class="timeline-body">
+        <h5>Αύγουστος 2025</h5>
+        <p>Οι κάτοχοι αυτού του σήματος έχουν επιδείξει κατανόηση της βασικής διαμόρφωσης ασφαλείας των συμπλεγμάτων Kubernetes για την επίτευξη των στόχων συμμόρφωσης, συμπεριλαμβανομένης της ικανότητας ενίσχυσης των ελέγχων ασφαλείας, δοκιμής και παρακολούθησης της ασφάλειας και συμμετοχής στην αξιολόγηση απειλών και τρωτών σημείων ασφαλείας.</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="timeline-inverted">
+    <a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank"><img class="timeline-image lazy" src="/img/kcna.png" alt="KCNA BADGE"></a>
+    <div class="timeline-panel markdown">
+      <div class="timeline-heading">
+        <h4><a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank">Kubernetes and Cloud Native Associate (KCNA)</a></h4>
+      </div>
+      <div class="timeline-body">
+        <h5>Ιούλιος 2025</h5>
+        <p>Οι κάτοχοι αυτής της διάκρισης επέδειξαν βασική γνώση του Kubernetes και των τεχνολογιών cloud-native, συμπεριλαμβανομένου του τρόπου ανάπτυξης μιας εφαρμογής χρησιμοποιώντας βασικές εντολές kubectl, της αρχιτεκτονικής του Kubernetes (κοντέινερ, pods, κόμβοι, clusters), της κατανόησης του τοπίου και των έργων cloud-native (αποθήκευση, δικτύωση, GitOps, service mesh) και της κατανόησης των αρχών της ασφάλειας cloud-native.</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="timeline-inverted">
     <a href="https://www.credly.com/users/christos-karamolegkos/badges" target="_blank"><img class="timeline-image lazy" src="/img/LFCE.png" alt="Linux Foundation Certified Engineer BADGE"></a>
     <div class="timeline-panel markdown">
       <div class="timeline-heading">

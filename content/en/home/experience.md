@@ -16,14 +16,34 @@ Below you will find a list with my recent work experience.
 		<h4><a href="https://powerfactors.com" style="color:#063DC8" target="_blank">Power Factors</a></h4>
 	  </div>
 	  <div class="timeline-body">
+		<h5>Manager, Systems & Infrastructure</h5>
+		<h5>November 2024 - Now</h5>
+        <ul>
+			<li>Managed a team of 9+ engineers, in a team focused on Systems & Infrastructure.</li>
+			<li>Onboarded and mentored team members and acted as technical lead for the team.</li>
+			<li>Architectured robust solutions for both physical and virtual device deployment and spearheaded their implementation.</li>
+			<li>Automated the cybersecurity hardening of field devices according to CIS benchmarks.</li>
+			<li><em>Relevant Skills</em>: <strong>Leadership</strong>, <strong>Management</strong>, <strong>Linux</strong>, <strong>Bash</strong>, <strong>Ansible</strong>, <strong>Cybersecurity</strong>, <strong>Monitoring</strong>, <strong>Kubernetes</strong></li>
+		</ul>
+	  </div>
+	</div>
+  </li>
+
+  <li class="timeline-inverted">
+	<a href="https://powerfactors.com" target="_blank"><img class="timeline-image lazy" src="/img/powerfactors.png" alt="POWER FACTORS LOGO"></a>
+	<div class="timeline-panel markdown">
+	  <div class="timeline-heading">
+		<h4><a href="https://powerfactors.com" style="color:#063DC8" target="_blank">Power Factors</a></h4>
+	  </div>
+	  <div class="timeline-body">
 		<h5>Senior ITSM Engineer</h5>
-		<h5>January 2024 - Now</h5>
+		<h5>January 2024 - November 2024</h5>
         <ul>
 			<li>Automated and performed deployment and maintenance across a fleet of more than 7500 servers and devices around the globe.</li>
 			<li>Maintained hundreds of live services by monitoring performance indicators such as availability, throughput and latency.</li>
 			<li>Grew systems by advocating for changes that enhance reliability, performance and serviceability.</li>
 			<li>Collaborated with the development team to refine CI/CD processes and implement dozens of services, including native packages and containers, on both cloud and on-premises Kubernetes.</li>
-			<li><em>Relevant Skills</em>: <strong>Linux</strong>, <strong>Bash</strong>, <strong>Ansible</strong>, <strong>VPN</strong>, <strong>Monitoring</strong>, <strong>Kafka</strong>, <strong>MQTT</strong></li>, <strong>Cassandra</strong></li>, <strong>Docker</strong>, <strong>Kubernetes</strong></li>
+			<li><em>Relevant Skills</em>: <strong>Linux</strong>, <strong>Bash</strong>, <strong>Ansible</strong>, <strong>VPN</strong>, <strong>Monitoring</strong>, <strong>Kafka</strong>, <strong>MQTT</strong>, <strong>Cassandra</strong>, <strong>Docker</strong>, <strong>Kubernetes</strong></li>
 		</ul>
 	  </div>
 	</div>

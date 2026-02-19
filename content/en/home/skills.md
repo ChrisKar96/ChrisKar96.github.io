@@ -11,7 +11,7 @@ weight: "10"
       </tr>
       <tr>
          <td>DevOps</td>
-         <td>Ansible, Git, Github, Github Actions, GitLab, TravisCI, Docker, Podman, Kubernetes</td>
+         <td>Ansible, Git, Github, Github Actions, GitLab, CI/CD, Docker, Podman, Kubernetes</td>
       </tr>
       <tr>
          <td>Monitoring</td>
@@ -26,12 +26,8 @@ weight: "10"
          <td>HTML/CSS, Bootstrap, Javascript, JQuery, Ajax, PHP, SQL, WordPress, Redis</td>
       </tr>
       <tr>
-         <td>Operating Systems</td>
-         <td>Linux (Debian, Ubuntu, CentOS), Windows</td>
-      </tr>
-      <tr>
-         <td>Miscellaneous</td>
-         <td>Troubleshooting, Office Suites, Driving License (B)</td>
+         <td>Leadership</td>
+         <td>Team Leadership, Management, Technical Leading, Mentoring</td>
       </tr>
       <tr>
          <td>Languages</td>
