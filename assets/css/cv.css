@@ -67,7 +67,7 @@ body.cv-pdf-exporting .cv-toolbar {
 	z-index: 10000;
 }
 
-/* Live element restyled for capture (also set inline by cv.js) */
+/* Export mode: toggled by cv.js adding .cv-document-export class */
 #cv-document.cv-document-export,
 #cv-document.cv-document-export * {
 	color: #111 !important;
