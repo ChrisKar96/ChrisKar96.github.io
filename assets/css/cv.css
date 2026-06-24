@@ -43,6 +43,20 @@ a:hover {
 	text-decoration: underline;
 }
 
+/* While generating PDF — light feedback on the whole page */
+body.cv-pdf-busy {
+	cursor: progress;
+}
+
+body.cv-pdf-busy .cv-document {
+	opacity: 0.92;
+}
+
+/* During html2canvas capture: keep document clean (toolbar is outside #cv-document anyway) */
+body.cv-pdf-exporting .cv-toolbar {
+	visibility: hidden;
+}
+
 /* Screen toolbar */
 .cv-toolbar {
 	position: sticky;
