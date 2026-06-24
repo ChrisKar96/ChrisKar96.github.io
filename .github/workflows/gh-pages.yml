@@ -8,11 +8,16 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
+      pages: write
+      id-token: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -44,15 +49,18 @@ jobs:
 
       - name: Generate CV PDF
         run: |
-          # Serve the built site in the background
-          npx serve ./public -l 8787 -s &
+          # Serve the built site in the background (no -s: static mode, not SPA)
+          npx serve ./public -l 8787 &
           SERVER_PID=$!
-          sleep 2
+          # Wait until the server is actually responding
+          for i in $(seq 1 10); do curl -s -o /dev/null http://localhost:8787/cv/ && break; sleep 1; done
 
           # Print /cv/ to PDF via headless Chrome (produces selectable text, ATS-friendly)
           google-chrome-stable --headless --disable-gpu --no-sandbox \
             --print-to-pdf=./public/christos-karamolegkos-cv-eng-raw.pdf \
             --no-pdf-header-footer \
+            --run-all-compositor-stages-before-draw \
+            --virtual-time-budget=10000 \
             http://localhost:8787/cv/
 
           kill $SERVER_PID || true
@@ -68,12 +76,13 @@ jobs:
           rm ./public/christos-karamolegkos-cv-eng-raw.pdf
           echo "PDF size: $(du -h ./public/christos-karamolegkos-cv-eng.pdf | cut -f1)"
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        # If you're changing the branch from main,
-        # also change the `main` in `refs/heads/main`
-        # below accordingly.
+      - name: Upload Pages artifact
         if: ${{ github.ref == 'refs/heads/main' }}
+        uses: actions/upload-pages-artifact@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        if: ${{ github.ref == 'refs/heads/main' }}
+        id: deploy
+        uses: actions/deploy-pages@v5
