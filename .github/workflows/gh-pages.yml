@@ -58,6 +58,7 @@ jobs:
           kill $SERVER_PID || true
 
           # Optimize with Ghostscript (strip metadata bloat, compress fonts/images)
+          sudo apt-get install -y -qq ghostscript > /dev/null
           gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 \
             -dNOPAUSE -dBATCH -dQUIET \
             -dPrinted=false \
