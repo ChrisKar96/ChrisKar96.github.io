@@ -101,32 +101,30 @@ body.cv-pdf-exporting .cv-toolbar {
  * html2canvas handles flex poorly (content can render shifted/clipped — only paragraph tails visible).
  * Switch timeline entries to float/block during export only.
  */
-body.cv-pdf-exporting .cv-section-body ul.timeline > li,
-body.cv-pdf-exporting .cv-section-body ul.timeline > li.timeline-inverted {
-	display: block !important;
-	overflow: hidden !important;
-	position: static !important;
-	page-break-inside: auto !important;
-	break-inside: auto !important;
-	page-break-before: auto !important;
-	page-break-after: auto !important;
-}
-
-/* Flowing multi-page export: no section-level keep-together (was causing page-1 skills-only + huge gap) */
+/* Sections/document: allow flow across pages (avoid on these caused the page-1 gap) */
 body.cv-pdf-exporting .cv-section,
 body.cv-pdf-exporting .cv-section-body,
 body.cv-pdf-exporting .cv-section-body ul.timeline,
 body.cv-pdf-exporting #cv-document.cv-document-export {
 	page-break-inside: auto !important;
 	break-inside: auto !important;
-	page-break-before: auto !important;
-	page-break-after: auto !important;
+}
+
+/* Individual entries: keep each job/cert/edu together on one page */
+body.cv-pdf-exporting .cv-section-body ul.timeline > li,
+body.cv-pdf-exporting .cv-section-body ul.timeline > li.timeline-inverted {
+	display: block !important;
+	overflow: hidden !important;
+	position: static !important;
+	page-break-inside: avoid !important;
+	break-inside: avoid !important;
 }
 
 body.cv-pdf-exporting #cv-document.cv-document-export {
-	/* Screen view uses min-height:297mm which adds empty space on short first "page" in capture */
 	min-height: 0 !important;
 	height: auto !important;
+	/* Let html2pdf handle margins per page; remove element-level padding */
+	padding: 0 !important;
 }
 
 body.cv-pdf-exporting .cv-section-body ul.timeline > li > a:first-child {
@@ -318,9 +316,9 @@ body.cv-pdf-exporting .cv-skills table td:first-child {
 	margin: 0 0 0.45cm;
 	padding: 0;
 	position: static;
-	/* Prefer keeping a single job entry together, but never force a whole section to the next page */
-	page-break-inside: auto;
-	break-inside: auto;
+	/* Keep each entry together; sections themselves flow freely */
+	page-break-inside: avoid;
+	break-inside: avoid;
 	/* reset site timeline pseudo/layout */
 	background: none;
 	border: none;
@@ -501,14 +499,14 @@ body.cv-pdf-exporting .cv-skills table td:first-child {
 		background: #fff !important;
 	}
 
-	/* Print/PDF fallback: allow natural flow; only avoid breaking mid-entry when possible */
+	/* Sections flow across pages; individual entries stay together */
 	.cv-section {
 		page-break-inside: auto;
 	}
 
 	.cv-section-body ul.timeline > li {
-		page-break-inside: auto;
-		break-inside: auto;
+		page-break-inside: avoid;
+		break-inside: avoid;
 	}
 
 	a {

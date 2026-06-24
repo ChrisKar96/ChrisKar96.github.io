@@ -229,7 +229,8 @@
 		normalizeAnchorHrefs(el);
 
 		var opt = {
-			margin: 0,
+			// Per-page margin in mm [top, left, bottom, right] — prevents text cut-off at page edges
+			margin: [10, 10, 10, 10],
 			filename: PDF_FILENAME,
 			image: { type: 'jpeg', quality: 0.98 },
 			// html2pdf hyperlinks plugin: overlay real PDF link annotations on the raster
@@ -292,13 +293,17 @@
 						'  min-height: 0 !important;',
 						'  height: auto !important;',
 						'}',
-						/* Flow: never keep whole sections/entries together (causes page-1 gap) */
+						/* Sections/timeline/document: flow across pages */
 						'#cv-document, #cv-document .cv-section, #cv-document .cv-section-body,',
-						'#cv-document ul.timeline, #cv-document ul.timeline > li {',
+						'#cv-document ul.timeline {',
 						'  page-break-inside: auto !important;',
 						'  break-inside: auto !important;',
-						'  page-break-before: auto !important;',
-						'  page-break-after: auto !important;',
+						'}',
+						/* Individual entries: keep together on one page */
+						'#cv-document ul.timeline > li,',
+						'#cv-document ul.timeline > li.timeline-inverted {',
+						'  page-break-inside: avoid !important;',
+						'  break-inside: avoid !important;',
 						'}',
 						/* Block layout — flex is poorly supported in html2canvas */
 						'body.cv-pdf-exporting .cv-section-body ul.timeline > li,',
@@ -335,10 +340,9 @@
 				orientation: 'portrait',
 				compress: true
 			},
-			// No 'css' / 'avoid-all' modes: those honor page-break-inside and shove whole
-			// sections (e.g. Experience) onto page 2, leaving skills + blank space on page 1.
-			// Empty mode = continuous canvas sliced into A4 pages (natural flow).
-			pagebreak: { mode: [] }
+			// 'css' mode: html2pdf honors break-inside:avoid on <li> entries (keeps each
+			// job/cert/edu together) while letting sections flow freely across pages.
+			pagebreak: { mode: ['css'] }
 		};
 
 		return window.html2pdf().set(opt).from(el).save();
