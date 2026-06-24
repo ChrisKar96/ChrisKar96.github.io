@@ -116,7 +116,7 @@ body.cv-pdf-exporting #cv-document.cv-document-export {
 body.cv-pdf-exporting .cv-section-body ul.timeline > li,
 body.cv-pdf-exporting .cv-section-body ul.timeline > li.timeline-inverted {
 	display: block !important;
-	overflow: hidden !important;
+	overflow: visible !important;
 	position: static !important;
 	page-break-inside: avoid !important;
 	break-inside: avoid !important;
