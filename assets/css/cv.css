@@ -1,0 +1,416 @@
+/* CV page — LaTeX mycv.cls look: A4, 9pt body, 1cm margins, section rules */
+
+/* Tinos-like serif stack (LaTeX CV uses Tinos); fall back sensibly */
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+	--cv-font: 'Tinos', 'Times New Roman', Times, serif;
+	--cv-size: 9pt;
+	--cv-margin: 1cm;
+	--cv-page-w: 210mm;
+	--cv-text: #111;
+	--cv-link: #063DC8;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: var(--cv-size);
+}
+
+body.cv-page {
+	margin: 0;
+	padding: 0;
+	font-family: var(--cv-font);
+	font-size: var(--cv-size);
+	line-height: 1.35;
+	color: var(--cv-text);
+	background: #e8e8e8;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Screen toolbar */
+.cv-toolbar {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.6rem 1rem;
+	background: #1a1a1a;
+	color: #fff;
+	font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+	font-size: 14px;
+}
+
+.cv-toolbar-link {
+	color: #fff;
+	text-decoration: none;
+}
+
+.cv-toolbar-link:hover {
+	text-decoration: underline;
+}
+
+.cv-toolbar-btn {
+	cursor: pointer;
+	border: 1px solid #fff;
+	background: transparent;
+	color: #fff;
+	padding: 0.35rem 0.85rem;
+	font: inherit;
+	border-radius: 2px;
+}
+
+.cv-toolbar-btn:hover,
+.cv-toolbar-btn:focus {
+	background: #fff;
+	color: #1a1a1a;
+	outline: none;
+}
+
+/* A4 document frame (screen) */
+.cv-document {
+	width: var(--cv-page-w);
+	max-width: 100%;
+	min-height: 297mm;
+	margin: 1rem auto 2rem;
+	padding: var(--cv-margin);
+	background: #fff;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Header — \name + \contact */
+.cv-header {
+	text-align: center;
+	margin-bottom: 0.45cm;
+}
+
+.cv-name {
+	margin: 0 0 0.2cm;
+	font-size: 2.2em;
+	font-weight: 700;
+	line-height: 1.1;
+}
+
+.cv-roles {
+	margin: 0 0 0.45cm;
+	font-size: 0.95em;
+}
+
+.cv-sep {
+	margin: 0 0.25em;
+	font-size: 1.15em;
+	vertical-align: middle;
+}
+
+.cv-contact {
+	margin: 0.12cm 0;
+	font-size: 0.95em;
+}
+
+.cv-contact-item i {
+	margin-right: 0.25em;
+}
+
+/* Sections — \section with titlerule (allow flow across pages; avoid only on tiny blocks) */
+.cv-section {
+	margin-top: 0.35cm;
+	/* No page-break-inside:avoid on whole sections — that pushed entire Experience to page 2 */
+	page-break-inside: auto;
+	break-inside: auto;
+}
+
+.cv-section-title {
+	margin: 0 0 0.25cm;
+	font-size: 1.45em;
+	font-weight: 700;
+	text-align: left;
+	border-bottom: 1px solid #000;
+	padding-bottom: 0.08cm;
+	line-height: 1.2;
+}
+
+.cv-section-body > p,
+.cv-section-body > br {
+	display: none;
+}
+
+/* --- Skills (tableres from skills.md) --- */
+.cv-skills .tableres,
+.cv-skills table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0;
+}
+
+.cv-skills .tableres td,
+.cv-skills table td {
+	padding: 0.08cm 0.2cm 0.08cm 0;
+	vertical-align: top;
+	border: none;
+	font-size: 1em;
+	line-height: 1.3;
+}
+
+.cv-skills .tableres td:first-child,
+.cv-skills table td:first-child {
+	width: 4.5cm;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+/* --- Timeline → CV entries (experience, education, certifications) --- */
+.cv-section-body ul.timeline {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.cv-section-body ul.timeline > li,
+.cv-section-body ul.timeline > li.timeline-inverted {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.35cm;
+	margin: 0 0 0.45cm;
+	padding: 0;
+	position: static;
+	/* Keep each entry together; sections themselves flow freely */
+	page-break-inside: avoid;
+	break-inside: avoid;
+	/* reset site timeline pseudo/layout */
+	background: none;
+	border: none;
+}
+
+.cv-section-body ul.timeline::before,
+.cv-section-body ul.timeline::after,
+.cv-section-body ul.timeline > li::before,
+.cv-section-body ul.timeline > li::after,
+.cv-section-body .timeline-badge,
+.cv-section-body .timeline-panel::before,
+.cv-section-body .timeline-panel::after {
+	display: none !important;
+	content: none !important;
+}
+
+/* Logo column — EntryDatedLogo left minipage (~0.1\textwidth) */
+.cv-section-body ul.timeline > li > a:first-child {
+	flex: 0 0 1.6cm;
+	width: 1.6cm;
+	max-width: 1.6cm;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding-top: 0.05cm;
+	margin: 0;
+	text-decoration: none;
+}
+
+.cv-section-body .timeline-image,
+.cv-section-body img.timeline-image,
+.cv-section-body img.lazy {
+	width: 1.35cm !important;
+	height: auto !important;
+	max-width: 1.35cm !important;
+	max-height: 1.35cm !important;
+	object-fit: contain;
+	border-radius: 0 !important;
+	border: none !important;
+	box-shadow: none !important;
+	margin: 0 !important;
+	display: block;
+	/* Ensure lazy images show without JS (src may be in data-src) */
+	opacity: 1 !important;
+}
+
+/* Body column */
+.cv-section-body .timeline-panel {
+	flex: 1 1 auto;
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	box-shadow: none;
+	text-align: left;
+	float: none;
+	width: auto;
+}
+
+.cv-section-body .timeline-heading {
+	margin: 0;
+	padding: 0;
+}
+
+.cv-section-body .timeline-heading h4 {
+	margin: 0;
+	padding: 0;
+	font-size: 1.15em;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.cv-section-body .timeline-heading h4 a {
+	color: inherit;
+	font-weight: 700;
+}
+
+/* Role + date rows (h5 in timeline-body) — LaTeX: org+date on title line, role as subtitle */
+.cv-section-body .timeline-body {
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+}
+
+.cv-section-body .timeline-body > h5 {
+	margin: 0.05cm 0 0;
+	padding: 0;
+	font-size: 0.95em;
+	font-weight: 400;
+	line-height: 1.3;
+}
+
+/* Experience: first h5 = role, second h5 = dates — float date toward heading via flex on panel */
+.cv-experience .timeline-panel {
+	display: flex;
+	flex-direction: column;
+}
+
+.cv-experience .timeline-body > h5:last-of-type {
+	/* dates: slightly smaller, like \small in datedentry */
+	font-size: 0.9em;
+}
+
+/* Entry lists */
+.cv-section-body .timeline-body > ul {
+	margin: 0.12cm 0 0.08cm 0.55cm;
+	padding: 0;
+	list-style: disc;
+}
+
+.cv-section-body .timeline-body > ul > li {
+	margin: 0.04cm 0;
+	padding: 0;
+	display: list-item;
+	position: static;
+	background: none;
+	border: none;
+}
+
+.cv-section-body .timeline-body > ul > li::before,
+.cv-section-body .timeline-body > ul > li::after {
+	display: none !important;
+	content: none !important;
+}
+
+.cv-section-body .timeline-body > p {
+	margin: 0.1cm 0 0;
+	padding: 0;
+	display: block;
+	font-size: 0.95em;
+}
+
+/* Relevant skills line: italic labels, normal/strong skills (site uses em+strong) */
+.cv-section-body .timeline-body em {
+	font-style: italic;
+}
+
+.cv-section-body .timeline-body strong {
+	font-weight: 700;
+}
+
+/* Education/cert paragraphs only — no bullet list */
+.cv-education .timeline-body > p,
+.cv-certifications .timeline-body > p {
+	margin-top: 0.08cm;
+}
+
+/* --- Print / PDF --- */
+@media print {
+	@page {
+		size: A4;
+		margin: 1cm;
+	}
+
+	html,
+	body.cv-page {
+		background: #fff !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		width: auto !important;
+		height: auto !important;
+		font-size: 9pt !important;
+	}
+
+	.no-print,
+	.cv-toolbar {
+		display: none !important;
+	}
+
+	.cv-document {
+		width: 100% !important;
+		max-width: none !important;
+		min-height: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		box-shadow: none !important;
+		background: #fff !important;
+	}
+
+	/* Sections flow across pages; individual entries stay together */
+	.cv-section {
+		page-break-inside: auto;
+	}
+
+	.cv-section-body ul.timeline > li {
+		page-break-inside: avoid;
+		break-inside: avoid;
+	}
+
+	a {
+		text-decoration: none !important;
+		color: inherit !important;
+	}
+
+	/* Keep logos in print */
+	.cv-section-body img {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+}
+
+/* Narrow screen: still readable, not strict A4 */
+@media screen and (max-width: 220mm) {
+	.cv-document {
+		width: 100%;
+		margin: 0;
+		box-shadow: none;
+	}
+
+	body.cv-page {
+		background: #fff;
+	}
+
+	.cv-skills .tableres td:first-child,
+	.cv-skills table td:first-child {
+		white-space: normal;
+		width: 30%;
+	}
+}

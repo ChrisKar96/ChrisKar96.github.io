@@ -14,21 +14,21 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: '0.58.3'
           extended: true
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
-          node-version: '16'
+          node-version: '22'
           cache: 'npm'
           # The action defaults to search for the dependency file (package-lock.json,
           # npm-shrinkwrap.json or yarn.lock) in the repository root, and uses its
@@ -42,8 +42,34 @@ jobs:
       - name: Build
         run: hugo --gc --minify
 
+      - name: Generate CV PDF
+        run: |
+          # Serve the built site in the background
+          npx serve ./public -l 8787 -s &
+          SERVER_PID=$!
+          sleep 2
+
+          # Print /cv/ to PDF via headless Chrome (produces selectable text, ATS-friendly)
+          google-chrome-stable --headless --disable-gpu --no-sandbox \
+            --print-to-pdf=./public/christos-karamolegkos-cv-eng-raw.pdf \
+            --no-pdf-header-footer \
+            http://localhost:8787/cv/
+
+          kill $SERVER_PID || true
+
+          # Optimize with Ghostscript (strip metadata bloat, compress fonts/images)
+          sudo apt-get install -y -qq ghostscript > /dev/null
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 \
+            -dNOPAUSE -dBATCH -dQUIET \
+            -dPrinted=false \
+            -sOutputFile=./public/christos-karamolegkos-cv-eng.pdf \
+            ./public/christos-karamolegkos-cv-eng-raw.pdf
+
+          rm ./public/christos-karamolegkos-cv-eng-raw.pdf
+          echo "PDF size: $(du -h ./public/christos-karamolegkos-cv-eng.pdf | cut -f1)"
+
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         # If you're changing the branch from main,
         # also change the `main` in `refs/heads/main`
         # below accordingly.

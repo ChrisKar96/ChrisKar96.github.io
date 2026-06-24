@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ .Title }}</title>
+	<meta name="description" content="Curriculum Vitae — Christos Karamolegkos">
+	<meta name="author" content="Christos Karamolegkos">
+	<link rel="icon" href="{{ "/img/fav.ico" | relURL }}">
+	{{ $cvCSS := resources.Get "css/cv.css" | minify }}
+	<link rel="stylesheet" href="{{ $cvCSS.RelPermalink }}">
+	{{/* Font Awesome ships with the introduction theme (static/css) */}}
+	<link rel="stylesheet" href="{{ "/css/font-awesome.min.css" | relURL }}">
+</head>
+<body class="cv-page">
+	{{ $home := .Site.GetPage "/home" }}
+	{{ $skills := $home.Resources.GetMatch "skills.md" }}
+	{{ $experience := $home.Resources.GetMatch "experience.md" }}
+	{{ $education := $home.Resources.GetMatch "education.md" }}
+	{{ $certifications := $home.Resources.GetMatch "certifications.md" }}
+
+	<div class="cv-toolbar no-print">
+		<a class="cv-toolbar-link" href="{{ "/" | relLangURL }}">&larr; Back to site</a>
+		<a class="cv-toolbar-btn" href="/christos-karamolegkos-cv-eng.pdf" download title="Download christos-karamolegkos-cv-eng.pdf">
+			<i class="fa fa-fw fa-download"></i> Download PDF
+		</a>
+	</div>
+
+	<article id="cv-document" class="cv-document" aria-label="Curriculum Vitae">
+		<header class="cv-header">
+			<h1 class="cv-name">Christos Karamolegkos</h1>
+			<p class="cv-roles">DevOps Engineer <span class="cv-sep">&middot;</span> Systems Administrator</p>
+			<p class="cv-contact">
+				<span class="cv-contact-item"><i class="fa fa-fw fa-mobile" aria-hidden="true"></i><a href="tel:+306949674952">(+30)694-967-4952</a></span>
+				<span class="cv-sep">&middot;</span>
+				<span class="cv-contact-item"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></span>
+				<span class="cv-sep">&middot;</span>
+				<span class="cv-contact-item"><i class="fa fa-fw fa-paper-plane" aria-hidden="true"></i><a href="https://t.me/ChrisKaramo" target="_blank" rel="noopener">t.me/ChrisKaramo</a></span>
+			</p>
+			<p class="cv-contact">
+				<span class="cv-contact-item"><i class="fa fa-fw fa-home" aria-hidden="true"></i><a href="https://www.ckaramolegkos.gr/">www.ckaramolegkos.gr</a></span>
+				<span class="cv-sep">&middot;</span>
+				<span class="cv-contact-item"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><a href="https://www.linkedin.com/in/chriskaramo" target="_blank" rel="noopener">/in/chriskaramo</a></span>
+				<span class="cv-sep">&middot;</span>
+				<span class="cv-contact-item"><i class="fab fa-fw fa-github" aria-hidden="true"></i><a href="https://github.com/ChrisKar96" target="_blank" rel="noopener">ChrisKar96</a></span>
+			</p>
+		</header>
+
+		{{ with $skills }}
+		<section class="cv-section cv-skills" id="cv-skills">
+			<h2 class="cv-section-title">Skills</h2>
+			<div class="cv-section-body">
+				{{ .Content }}
+			</div>
+		</section>
+		{{ end }}
+
+		{{ with $experience }}
+		<section class="cv-section cv-experience" id="cv-experience">
+			<h2 class="cv-section-title">Experience</h2>
+			<div class="cv-section-body">
+				{{ .Content }}
+			</div>
+		</section>
+		{{ end }}
+
+		{{ with $education }}
+		<section class="cv-section cv-education" id="cv-education">
+			<h2 class="cv-section-title">Education</h2>
+			<div class="cv-section-body">
+				{{ .Content }}
+			</div>
+		</section>
+		{{ end }}
+
+		{{ with $certifications }}
+		<section class="cv-section cv-certifications" id="cv-certifications">
+			<h2 class="cv-section-title">Certifications</h2>
+			<div class="cv-section-body">
+				{{ .Content }}
+			</div>
+		</section>
+		{{ end }}
+	</article>
+
+
+</body>
+</html>
