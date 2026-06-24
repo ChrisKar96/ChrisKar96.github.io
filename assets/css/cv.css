@@ -106,7 +106,27 @@ body.cv-pdf-exporting .cv-section-body ul.timeline > li.timeline-inverted {
 	display: block !important;
 	overflow: hidden !important;
 	position: static !important;
-	page-break-inside: avoid;
+	page-break-inside: auto !important;
+	break-inside: auto !important;
+	page-break-before: auto !important;
+	page-break-after: auto !important;
+}
+
+/* Flowing multi-page export: no section-level keep-together (was causing page-1 skills-only + huge gap) */
+body.cv-pdf-exporting .cv-section,
+body.cv-pdf-exporting .cv-section-body,
+body.cv-pdf-exporting .cv-section-body ul.timeline,
+body.cv-pdf-exporting #cv-document.cv-document-export {
+	page-break-inside: auto !important;
+	break-inside: auto !important;
+	page-break-before: auto !important;
+	page-break-after: auto !important;
+}
+
+body.cv-pdf-exporting #cv-document.cv-document-export {
+	/* Screen view uses min-height:297mm which adds empty space on short first "page" in capture */
+	min-height: 0 !important;
+	height: auto !important;
 }
 
 body.cv-pdf-exporting .cv-section-body ul.timeline > li > a:first-child {
@@ -298,7 +318,9 @@ body.cv-pdf-exporting .cv-skills table td:first-child {
 	margin: 0 0 0.45cm;
 	padding: 0;
 	position: static;
-	page-break-inside: avoid;
+	/* Prefer keeping a single job entry together, but never force a whole section to the next page */
+	page-break-inside: auto;
+	break-inside: auto;
 	/* reset site timeline pseudo/layout */
 	background: none;
 	border: none;
@@ -479,13 +501,14 @@ body.cv-pdf-exporting .cv-skills table td:first-child {
 		background: #fff !important;
 	}
 
+	/* Print/PDF fallback: allow natural flow; only avoid breaking mid-entry when possible */
 	.cv-section {
-		page-break-inside: avoid;
+		page-break-inside: auto;
 	}
 
 	.cv-section-body ul.timeline > li {
-		page-break-inside: avoid;
-		break-inside: avoid;
+		page-break-inside: auto;
+		break-inside: auto;
 	}
 
 	a {

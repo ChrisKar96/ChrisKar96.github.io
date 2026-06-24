@@ -170,6 +170,8 @@
 		el.style.setProperty('overflow', 'visible', 'important');
 		el.style.setProperty('float', 'none', 'important');
 		el.style.setProperty('display', 'block', 'important');
+		el.style.setProperty('min-height', '0', 'important');
+		el.style.setProperty('height', 'auto', 'important');
 	}
 
 	function restoreElementAfterCapture(el) {
