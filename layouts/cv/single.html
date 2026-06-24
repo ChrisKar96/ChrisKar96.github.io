@@ -21,9 +21,9 @@
 
 	<div class="cv-toolbar no-print">
 		<a class="cv-toolbar-link" href="{{ "/" | relLangURL }}">&larr; Back to site</a>
-		<button type="button" class="cv-toolbar-btn" id="cv-print-btn" title="Download christos-karamolegkos-cv-eng.pdf">
+		<a class="cv-toolbar-btn" href="/christos-karamolegkos-cv-eng.pdf" download title="Download christos-karamolegkos-cv-eng.pdf">
 			<i class="fa fa-fw fa-download"></i> Download PDF
-		</button>
+		</a>
 	</div>
 
 	<article id="cv-document" class="cv-document" aria-label="Curriculum Vitae">
@@ -83,7 +83,6 @@
 		{{ end }}
 	</article>
 
-	{{ $cvJS := resources.Get "js/cv.js" | minify }}
-	<script src="{{ $cvJS.RelPermalink }}"></script>
+
 </body>
 </html>

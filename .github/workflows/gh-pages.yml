@@ -42,6 +42,31 @@ jobs:
       - name: Build
         run: hugo --gc --minify
 
+      - name: Generate CV PDF
+        run: |
+          # Serve the built site in the background
+          npx serve ./public -l 8787 -s &
+          SERVER_PID=$!
+          sleep 2
+
+          # Print /cv/ to PDF via headless Chrome (produces selectable text, ATS-friendly)
+          google-chrome-stable --headless --disable-gpu --no-sandbox \
+            --print-to-pdf=./public/christos-karamolegkos-cv-eng-raw.pdf \
+            --no-pdf-header-footer \
+            http://localhost:8787/cv/
+
+          kill $SERVER_PID || true
+
+          # Optimize with Ghostscript (strip metadata bloat, compress fonts/images)
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 \
+            -dNOPAUSE -dBATCH -dQUIET \
+            -dPrinted=false \
+            -sOutputFile=./public/christos-karamolegkos-cv-eng.pdf \
+            ./public/christos-karamolegkos-cv-eng-raw.pdf
+
+          rm ./public/christos-karamolegkos-cv-eng-raw.pdf
+          echo "PDF size: $(du -h ./public/christos-karamolegkos-cv-eng.pdf | cut -f1)"
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         # If you're changing the branch from main,
