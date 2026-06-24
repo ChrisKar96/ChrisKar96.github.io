@@ -236,10 +236,12 @@ body.cv-pdf-exporting .cv-skills table td:first-child {
 	margin-right: 0.25em;
 }
 
-/* Sections — \section with titlerule */
+/* Sections — \section with titlerule (allow flow across pages; avoid only on tiny blocks) */
 .cv-section {
 	margin-top: 0.35cm;
-	page-break-inside: avoid;
+	/* No page-break-inside:avoid on whole sections — that pushed entire Experience to page 2 */
+	page-break-inside: auto;
+	break-inside: auto;
 }
 
 .cv-section-title {

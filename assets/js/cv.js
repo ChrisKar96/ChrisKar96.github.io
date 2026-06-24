@@ -199,12 +199,39 @@
 	 * html2pdf worker API only — avoids hand-rolled canvas slicing and scroll offsets.
 	 * margin 0: the element already carries ~1cm padding.
 	 */
+	/**
+	 * Ensure anchors have absolute http(s)/mailto/tel hrefs so html2pdf's hyperlinks
+	 * plugin can embed clickable annotations (relative or empty hrefs are skipped).
+	 */
+	function normalizeAnchorHrefs(root) {
+		var anchors = (root || document).querySelectorAll('a[href]');
+		for (var i = 0; i < anchors.length; i++) {
+			var a = anchors[i];
+			var href = a.getAttribute('href');
+			if (!href || href.charAt(0) === '#') {
+				continue;
+			}
+			// Resolve protocol-relative and path-only links against the live site origin
+			try {
+				if (/^(https?:|mailto:|tel:)/i.test(href)) {
+					continue; // already absolute
+				}
+				a.setAttribute('href', a.href); // browser resolves to absolute URL
+			} catch (e) {
+				// ignore
+			}
+		}
+	}
+
 	function renderElementToPdf(el) {
+		normalizeAnchorHrefs(el);
+
 		var opt = {
 			margin: 0,
 			filename: PDF_FILENAME,
 			image: { type: 'jpeg', quality: 0.98 },
-			enableLinks: false,
+			// html2pdf hyperlinks plugin: overlay real PDF link annotations on the raster
+			enableLinks: true,
 			html2canvas: {
 				scale: 2,
 				useCORS: true,
@@ -225,6 +252,23 @@
 					root.style.setProperty('margin', '0', 'important');
 					root.style.setProperty('left', '0', 'important');
 					root.style.setProperty('transform', 'none', 'important');
+					root.style.setProperty('min-height', '0', 'important');
+					root.style.setProperty('height', 'auto', 'important');
+
+					// Resolve hrefs in the clone too (plugin reads this DOM)
+					var anchors = root.querySelectorAll('a[href]');
+					for (var i = 0; i < anchors.length; i++) {
+						var a = anchors[i];
+						var href = a.getAttribute('href');
+						if (!href || href.charAt(0) === '#') {
+							continue;
+						}
+						if (!/^(https?:|mailto:|tel:)/i.test(href)) {
+							try {
+								a.setAttribute('href', a.href);
+							} catch (e) { /* ignore */ }
+						}
+					}
 
 					// Extra safety in the cloned DOM (html2canvas's internal copy)
 					var style = clonedDoc.createElement('style');
@@ -243,6 +287,16 @@
 						'  margin: 0 !important;',
 						'  left: 0 !important;',
 						'  transform: none !important;',
+						'  min-height: 0 !important;',
+						'  height: auto !important;',
+						'}',
+						/* Flow: never keep whole sections/entries together (causes page-1 gap) */
+						'#cv-document, #cv-document .cv-section, #cv-document .cv-section-body,',
+						'#cv-document ul.timeline, #cv-document ul.timeline > li {',
+						'  page-break-inside: auto !important;',
+						'  break-inside: auto !important;',
+						'  page-break-before: auto !important;',
+						'  page-break-after: auto !important;',
 						'}',
 						/* Block layout — flex is poorly supported in html2canvas */
 						'body.cv-pdf-exporting .cv-section-body ul.timeline > li,',
@@ -279,8 +333,10 @@
 				orientation: 'portrait',
 				compress: true
 			},
-			// Empty / css-only — never use 'avoid-all' (blank multi-page PDFs)
-			pagebreak: { mode: ['css'] }
+			// No 'css' / 'avoid-all' modes: those honor page-break-inside and shove whole
+			// sections (e.g. Experience) onto page 2, leaving skills + blank space on page 1.
+			// Empty mode = continuous canvas sliced into A4 pages (natural flow).
+			pagebreak: { mode: [] }
 		};
 
 		return window.html2pdf().set(opt).from(el).save();
