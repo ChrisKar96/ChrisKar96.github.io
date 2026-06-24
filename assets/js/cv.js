@@ -17,8 +17,9 @@
 	var AUTO_DOWNLOAD_DELAY_MS = 1200;
 	var PDF_FILENAME = 'christos-karamolegkos-cv-eng.pdf';
 	var HTML2PDF_SRC = '/js/vendor/html2pdf.bundle.min.js';
-	// A4 @ 96dpi
-	var EXPORT_WIDTH_PX = 794;
+	// A4 content area after 10mm margins each side: (210-20)mm ≈ 720px at 96dpi.
+	// Using full 794px (210mm) + html2pdf margins caused double-padding and right-side clipping.
+	var EXPORT_WIDTH_PX = 720;
 
 	var busy = false;
 	var savedInlineStyle = null;
@@ -148,15 +149,13 @@
 		el.classList.add('cv-document-export');
 		document.body.classList.add('cv-pdf-exporting');
 
-		// Fixed pixel box, normal flow, top-left of its containing block (body)
+		// Fixed pixel box matching the PDF content area (no padding — html2pdf margin handles it)
 		el.style.setProperty('box-sizing', 'border-box', 'important');
 		el.style.setProperty('width', EXPORT_WIDTH_PX + 'px', 'important');
 		el.style.setProperty('max-width', EXPORT_WIDTH_PX + 'px', 'important');
 		el.style.setProperty('min-width', EXPORT_WIDTH_PX + 'px', 'important');
 		el.style.setProperty('margin', '0', 'important');
-		el.style.setProperty('margin-left', '0', 'important');
-		el.style.setProperty('margin-right', '0', 'important');
-		el.style.setProperty('padding', '36px', 'important');
+		el.style.setProperty('padding', '0', 'important');
 		el.style.setProperty('background', '#ffffff', 'important');
 		el.style.setProperty('color', '#111111', 'important');
 		el.style.setProperty('box-shadow', 'none', 'important');
@@ -167,7 +166,7 @@
 		el.style.setProperty('transform', 'none', 'important');
 		el.style.setProperty('opacity', '1', 'important');
 		el.style.setProperty('visibility', 'visible', 'important');
-		el.style.setProperty('overflow', 'visible', 'important');
+		el.style.setProperty('overflow', 'hidden', 'important');
 		el.style.setProperty('float', 'none', 'important');
 		el.style.setProperty('display', 'block', 'important');
 		el.style.setProperty('min-height', '0', 'important');
@@ -257,6 +256,10 @@
 					root.style.setProperty('transform', 'none', 'important');
 					root.style.setProperty('min-height', '0', 'important');
 					root.style.setProperty('height', 'auto', 'important');
+					root.style.setProperty('padding', '0', 'important');
+					root.style.setProperty('overflow', 'hidden', 'important');
+					root.style.setProperty('width', '720px', 'important');
+					root.style.setProperty('max-width', '720px', 'important');
 
 					// Resolve hrefs in the clone too (plugin reads this DOM)
 					var anchors = root.querySelectorAll('a[href]');
@@ -292,6 +295,10 @@
 						'  transform: none !important;',
 						'  min-height: 0 !important;',
 						'  height: auto !important;',
+						'  padding: 0 !important;',
+						'  overflow: hidden !important;',
+						'  width: 720px !important;',
+						'  max-width: 720px !important;',
 						'}',
 						/* Sections/timeline/document: flow across pages */
 						'#cv-document, #cv-document .cv-section, #cv-document .cv-section-body,',

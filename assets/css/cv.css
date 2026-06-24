@@ -79,17 +79,19 @@ body.cv-pdf-exporting .cv-toolbar {
 	background: #fff !important;
 	opacity: 1 !important;
 	box-shadow: none !important;
-	/* Centered/auto margins + mm widths confuse html2canvas horizontal origin */
 	margin: 0 !important;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
+	padding: 0 !important;
 	left: 0 !important;
 	right: auto !important;
 	transform: none !important;
 	float: none !important;
 	display: block !important;
 	position: relative !important;
-	overflow: visible !important;
+	overflow: hidden !important;
+	width: 720px !important;
+	max-width: 720px !important;
+	min-height: 0 !important;
+	height: auto !important;
 }
 
 #cv-document.cv-document-export img {
@@ -123,8 +125,24 @@ body.cv-pdf-exporting .cv-section-body ul.timeline > li.timeline-inverted {
 body.cv-pdf-exporting #cv-document.cv-document-export {
 	min-height: 0 !important;
 	height: auto !important;
-	/* Let html2pdf handle margins per page; remove element-level padding */
 	padding: 0 !important;
+	overflow: hidden !important;
+}
+
+/* Kill trailing margins/padding that can push an empty third page */
+body.cv-pdf-exporting .cv-section:last-child {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+body.cv-pdf-exporting .cv-section:last-child .cv-section-body {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+body.cv-pdf-exporting .cv-section-body ul.timeline > li:last-child {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
 }
 
 body.cv-pdf-exporting .cv-section-body ul.timeline > li > a:first-child {
