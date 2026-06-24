@@ -43,18 +43,36 @@ a:hover {
 	text-decoration: underline;
 }
 
-/* While generating PDF — light feedback on the whole page */
+/* While generating PDF — do NOT reduce #cv-document opacity (breaks html2canvas / blank PDFs) */
 body.cv-pdf-busy {
 	cursor: progress;
 }
 
-body.cv-pdf-busy .cv-document {
-	opacity: 0.92;
+body.cv-pdf-busy .cv-toolbar-btn:disabled {
+	opacity: 0.85;
+	cursor: progress;
 }
 
-/* During html2canvas capture: keep document clean (toolbar is outside #cv-document anyway) */
+/* Export host/veil are injected by cv.js; keep toolbar usable above the veil */
 body.cv-pdf-exporting .cv-toolbar {
-	visibility: hidden;
+	position: sticky;
+	z-index: 2147483647;
+}
+
+/* Export clone — explicit non-variable colors for html2canvas reliability */
+.cv-document-export,
+.cv-document-export * {
+	color: #111 !important;
+}
+
+.cv-document-export {
+	background: #fff !important;
+	opacity: 1 !important;
+	box-shadow: none !important;
+}
+
+.cv-document-export img {
+	opacity: 1 !important;
 }
 
 /* Screen toolbar */
