@@ -53,26 +53,101 @@ body.cv-pdf-busy .cv-toolbar-btn:disabled {
 	cursor: progress;
 }
 
-/* Export host/veil are injected by cv.js; keep toolbar usable above the veil */
+/* During export: toolbar stays on top; body/doc use simple, html2canvas-safe layout */
+body.cv-pdf-exporting {
+	background: #fff !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
 body.cv-pdf-exporting .cv-toolbar {
+	/* Hide from capture visually? No — toolbar is OUTSIDE #cv-document so not captured.
+	   Keep it usable. */
 	position: sticky;
-	z-index: 2147483647;
+	z-index: 10000;
 }
 
-/* Export clone — explicit non-variable colors for html2canvas reliability */
-.cv-document-export,
-.cv-document-export * {
+/* Live element restyled for capture (also set inline by cv.js) */
+#cv-document.cv-document-export,
+#cv-document.cv-document-export * {
 	color: #111 !important;
+	animation: none !important;
+	transition: none !important;
 }
 
-.cv-document-export {
+#cv-document.cv-document-export {
 	background: #fff !important;
 	opacity: 1 !important;
 	box-shadow: none !important;
+	/* Centered/auto margins + mm widths confuse html2canvas horizontal origin */
+	margin: 0 !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	left: 0 !important;
+	right: auto !important;
+	transform: none !important;
+	float: none !important;
+	display: block !important;
+	position: relative !important;
+	overflow: visible !important;
 }
 
-.cv-document-export img {
+#cv-document.cv-document-export img {
 	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+/*
+ * html2canvas handles flex poorly (content can render shifted/clipped — only paragraph tails visible).
+ * Switch timeline entries to float/block during export only.
+ */
+body.cv-pdf-exporting .cv-section-body ul.timeline > li,
+body.cv-pdf-exporting .cv-section-body ul.timeline > li.timeline-inverted {
+	display: block !important;
+	overflow: hidden !important;
+	position: static !important;
+	page-break-inside: avoid;
+}
+
+body.cv-pdf-exporting .cv-section-body ul.timeline > li > a:first-child {
+	float: left !important;
+	display: block !important;
+	width: 48px !important;
+	max-width: 48px !important;
+	flex: none !important;
+	margin: 0 10px 4px 0 !important;
+	padding: 0 !important;
+}
+
+body.cv-pdf-exporting .cv-section-body .timeline-panel,
+body.cv-pdf-exporting .cv-experience .timeline-panel {
+	display: block !important;
+	float: none !important;
+	overflow: hidden !important; /* contain beside floated logo */
+	width: auto !important;
+	min-width: 0 !important;
+	flex: none !important;
+}
+
+body.cv-pdf-exporting .cv-section-body .timeline-image,
+body.cv-pdf-exporting .cv-section-body img.timeline-image,
+body.cv-pdf-exporting .cv-section-body img.lazy {
+	width: 42px !important;
+	height: auto !important;
+	max-width: 42px !important;
+	max-height: 42px !important;
+}
+
+body.cv-pdf-exporting .cv-skills .tableres,
+body.cv-pdf-exporting .cv-skills table {
+	width: 100% !important;
+	table-layout: fixed !important;
+}
+
+body.cv-pdf-exporting .cv-skills .tableres td:first-child,
+body.cv-pdf-exporting .cv-skills table td:first-child {
+	width: 28% !important;
+	white-space: normal !important;
 }
 
 /* Screen toolbar */
